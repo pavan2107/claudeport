@@ -1126,13 +1126,18 @@
   }
 
   @media (max-width:900px){
-    header{ padding:24px 24px; }
+    header{ padding:16px 24px; }
     .socials{ right:24px; gap:18px; }
     .hero-bottom-block{ bottom:40px; }
     .meta{ text-align:left; }
-    .portrait-wrap img{ height:68vh; }
-    .headline-wrap{ bottom:calc(7% - 24px); }
-    .ghost-static{ top:9%; }
+    .portrait-wrap img{ height:62vh; }
+    .headline-wrap{ bottom:15%; }
+    .ghost-static{ top:12%; }
+
+    .ghost-static-inner{
+    font-size:clamp(72px, 20vw, 150px);
+    letter-spacing:3px;}
+
     .about{ padding:80px 24px; }
     .about-grid{ grid-template-columns:1fr; gap:24px; }
     .about-photo-panel{ min-height:360px; }
@@ -1243,7 +1248,7 @@
 
     let ticking = false;
     let extraLift = 0; // extra upward px applied to DESIGNER so it never overlaps the bottom block
-    const manualHeadlineOffset = 80;
+    const manualHeadlineOffset = window.innerWidth <= 900 ? 0 : 80;
 
     function updateConverge(){
       const heroHeight = hero.offsetHeight;
